@@ -1246,7 +1246,7 @@ window.__require = function e(t, n, o) {
 								"YingTaoS", "JuZiS", "NingMengS", "MiHouTaoS", "XiHongShiS", "TaoS", "BoLuoS", "YeZiS", "XiGuaS"
 							], 
 							// 第一个水果
-							this.createOneFruit(5)
+							this.createOneFruit(0)
 					}, t.prototype.update = function(e) {
 						a.default.GameUpdateCtrl, this.lineNode.children[0].y - n.Instance.fruitHeigth < 100 && this.lineNode.children[
 								0].y - n.Instance.fruitHeigth >= 0 && (this.lineNode.children[0].active = !0), this.lineNode.children[0].y -
@@ -1298,7 +1298,7 @@ window.__require = function e(t, n, o) {
 					}, 
 					t.prototype.createOneFruit = function(e) {//生成水果函数
 						var t = this,
-							n = cc.instantiate(this.fruitPre);
+						n = cc.instantiate(this.fruitPre);
 						n.parent = this.lineNode, 
 						n.getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], 
 						n.children[0].getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], 
@@ -1306,7 +1306,7 @@ window.__require = function e(t, n, o) {
 						n.position = this.lineNode.children[1].position, 
 						n.scale = 0, n.getComponent(cc.RigidBody).type = cc.RigidBodyType.Static,
 						n.getComponent(cc.PhysicsCircleCollider).radius = 0, 
-						// n.getComponent(cc.PhysicsCircleCollider).restitution = 0.8,
+						n.getComponent(cc.PhysicsCircleCollider).restitution = 0.3,
 						n.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(n).to(.5, {
 								scale: 1
 							}, {
@@ -1744,22 +1744,22 @@ window.__require = function e(t, n, o) {
 							// 随机水果
 							this.scheduleOnce(
 							function() {
-								// i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), 
-								// t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), 
-								// t.createFruitCount++) : 2 == t.createFruitCount ?(a.default.Instance.createOneFruit(1), 
-								// t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), 
-								// t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), 
-								// t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(3), 
-								// t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(s.default.RandomInteger(0, 5)), 
-								// t.createFruitCount++)
-								i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(5),
-								t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
-								t.createFruitCount++) : 2 == t.createFruitCount ?(a.default.Instance.createOneFruit(5), 
-								t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
-								t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
-								t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
-								t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(5), 
+								i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), 
+								t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), 
+								t.createFruitCount++) : 2 == t.createFruitCount ?(a.default.Instance.createOneFruit(1), 
+								t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), 
+								t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), 
+								t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(3), 
+								t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(s.default.RandomInteger(0, 5)), 
 								t.createFruitCount++)
+								// i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(5),
+								// t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
+								// t.createFruitCount++) : 2 == t.createFruitCount ?(a.default.Instance.createOneFruit(5), 
+								// t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
+								// t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
+								// t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(5), 
+								// t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(5), 
+								// t.createFruitCount++)
 								)
 							}, .5))
 				}, t.prototype.closeTouch = function() {
